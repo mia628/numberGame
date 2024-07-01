@@ -42,13 +42,13 @@ function go() {
 
   chances--;
   chanceArea.textContent = `남은 기회 : ${chances}`;
-  historyArea.textContent = `지금까지 입력한 숫자는 ... ${history}`;
   history.push(inputNum.value);
-  
+  historyArea.textContent = `지금까지 입력한 숫자는 ... ${history}`;
+
   if (inputNum.value == num) {
     chanceArea.style.display = "none";
     resultArea.innerHTML =
-      "읿 정답 읿<br>" + `${3 - chances + 1}번 만에 정답을 맞췄습니다!`;
+      "읿 정답 읿<br>" + `${3 - chances }번 만에 정답을 맞췄습니다!`;
     goButton.disabled = true;
   } else if (inputNum.value > num) {
     resultArea.textContent = "입력한 숫자보다 작은 숫자 입니다.";
@@ -56,10 +56,11 @@ function go() {
     resultArea.textContent = "입력한 숫자보다 큰 숫자 입니다.";
   }
 
-  if (chances == 0) {
+  if (chances == 0 && inputNum.value != num) {
     resultArea.textContent = "게임 오버!";
     goButton.disabled = true;
   }
+  
 }
 
 function reset() {
