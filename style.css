@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Y_Spotlight';
+}
+
+html{
+    background: linear-gradient(135deg, rgba(4, 11, 87, 0.7), rgba(92, 127, 180, 0.7));
+}
+
+.game-box { /* Added new styles for the box */
+    border: 2px solid #000; /* Box border */
+    padding: 60px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+#input-number {
+    width: 130px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#reset-button {
+    margin-top: 50px;
+    padding: 17px 30px;
+    border: 0;
+    color: #fff;
+    font-size: 17px;
+    background: #00d301;
+    background: -webkit-linear-gradient(-196deg,#00d301,#36c275 50%,#00a562);
+    background: -webkit-linear-gradient(164deg,#00d301,#36c275 50%,#00a562);
+    background: linear-gradient(286deg,#00d301,#36c275 50%,#00a562);
+    font-weight: 800;
+    transition: background,color .1s ease-in-out;
+}
+
+@font-face {
+    font-family: 'Y_Spotlight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

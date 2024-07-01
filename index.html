@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-box">
+      <h1>숫자 맞추기 게임!</h1>
+      <p>
+        1부터 100까지의 숫자를 입력하세요.<br />
+        기회는 총 5번입니다 왂
+      </p>
+      <div>
+        <input
+          id="input-number"
+          type="number"
+          placeholder="숫자를 입력하세요"
+        />
+        <button id="go-button">Go!</button>
+      </div>
+      <p id="chances">남은 기회 : 3</p>
+      <p id="history-area"></p>
+
+      <p id="answer"></p>
+      <p id="resultArea" style="display: none"></p>
+      <button id="reset-button">다시하기</button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
