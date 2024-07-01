@@ -11,7 +11,9 @@ let historyArea = document.getElementById("history-area");
 
 goButton.addEventListener("click", go);
 resetButton.addEventListener("click", reset);
-inputNum.addEventListener("focus", function() { inputNum.value="" });
+inputNum.addEventListener("focus", function () {
+  inputNum.value = "";
+});
 
 function randomNum() {
   num = Math.floor(Math.random() * 100) + 1;
@@ -19,6 +21,11 @@ function randomNum() {
 }
 
 function go() {
+  if (chances == 0) {
+    resultArea.textContent = "게임 오버!";
+    goButton.disabled = true;
+  }
+
   if (resultArea.style.display == "none") {
     resultArea.style.display = "";
   }
@@ -52,12 +59,6 @@ function go() {
 
   chances--;
   chanceArea.textContent = `남은 기회 : ${chances}`;
-
-  if (chances == 0) {
-    resultArea.textContent = "게임 오버!";
-    goButton.disabled = true;
-  }
-
   historyArea.textContent = `지금까지 입력한 숫자는 ... ${history}`;
 }
 
@@ -69,6 +70,8 @@ function reset() {
   goButton.disabled = false;
   randomNum();
   history = [];
+  historyArea.textContent = "";
+  answer.textContent = `정답은 ${num}!!`;
 }
 
 randomNum();
