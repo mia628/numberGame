@@ -21,11 +21,6 @@ function randomNum() {
 }
 
 function go() {
-  if (chances == 0) {
-    resultArea.textContent = "게임 오버!";
-    goButton.disabled = true;
-  }
-
   if (resultArea.style.display == "none") {
     resultArea.style.display = "";
   }
@@ -45,7 +40,11 @@ function go() {
     return;
   }
 
+  chances--;
+  chanceArea.textContent = `남은 기회 : ${chances}`;
+  historyArea.textContent = `지금까지 입력한 숫자는 ... ${history}`;
   history.push(inputNum.value);
+  
   if (inputNum.value == num) {
     chanceArea.style.display = "none";
     resultArea.innerHTML =
@@ -57,9 +56,10 @@ function go() {
     resultArea.textContent = "입력한 숫자보다 큰 숫자 입니다.";
   }
 
-  chances--;
-  chanceArea.textContent = `남은 기회 : ${chances}`;
-  historyArea.textContent = `지금까지 입력한 숫자는 ... ${history}`;
+  if (chances == 0) {
+    resultArea.textContent = "게임 오버!";
+    goButton.disabled = true;
+  }
 }
 
 function reset() {
